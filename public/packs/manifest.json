@@ -1,0 +1,14 @@
+{
+  "application.js": "/packs/js/application-fcecad208b765232a47b.js",
+  "application.js.map": "/packs/js/application-fcecad208b765232a47b.js.map",
+  "entrypoints": {
+    "application": {
+      "js": [
+        "/packs/js/application-fcecad208b765232a47b.js"
+      ],
+      "js.map": [
+        "/packs/js/application-fcecad208b765232a47b.js.map"
+      ]
+    }
+  }
+}
