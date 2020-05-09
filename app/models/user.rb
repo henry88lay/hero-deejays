@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :djs
   has_many :bookings
-  validates :name, :address, presence: true
+  # validates :name, :address, presence: true
 end
