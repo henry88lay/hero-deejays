@@ -1,0 +1,10 @@
+<h1>create a new dj</h1>
+<%= simple_form_for @dj do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :dj_price %>
+  <%= f.input :genre %>
+  <%= f.input :description %>
+  <%= f.input :email %>
+  <%= f.submit %>
+<% end %>
