@@ -1,1 +1,7 @@
 <h1>this works on showing</h1>
+<% @users.each do |user| %>
+<%= user.name %>
+<% end %>
+
+
+<%= link_to  "create new", new_user_path %>
