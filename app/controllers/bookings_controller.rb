@@ -14,7 +14,7 @@ class BookingController < ApplicationController
     if @booking.save
       redirect_to booking_path(@booking)
     else
-      render 'users/show'
+      render 'booking/show'
     end
   end
   
