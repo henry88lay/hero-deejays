@@ -11,7 +11,7 @@ class DjsController < ApplicationController
     @dj = Dj.new(dj_params)
     @dj.save
 
-    redirect_to user_path(@dj)
+    redirect_to djs_path(@dj)
   end
 
   def edit
@@ -30,11 +30,12 @@ class DjsController < ApplicationController
     end
   end
 
-  def destroy 
-    @dj = Dj.find(params[:id]) 
-    @dj.destroy 
-    redirect_to dj_path(@dj.user) 
-  end 
+# def destroy 
+   # @dj = Dj.find(params[:id]) 
+   # @dj.destroy 
+  #redirect_to dj_path(@dj.user) 
+ #end 
+
 
   private
 
