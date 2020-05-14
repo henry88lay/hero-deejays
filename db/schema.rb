@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_09_051611) do
+ActiveRecord::Schema.define(version: 2020_05_14_105126) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,12 +20,12 @@ ActiveRecord::Schema.define(version: 2020_05_09_051611) do
     t.date "end_date"
     t.string "status"
     t.float "total_price"
-    t.bigint "user_id"
+    t.bigint "renter_id"
     t.bigint "dj_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["dj_id"], name: "index_bookings_on_dj_id"
-    t.index ["user_id"], name: "index_bookings_on_user_id"
+    t.index ["renter_id"], name: "index_bookings_on_renter_id"
   end
 
   create_table "djs", force: :cascade do |t|
@@ -35,10 +35,10 @@ ActiveRecord::Schema.define(version: 2020_05_09_051611) do
     t.string "genre"
     t.string "description"
     t.string "email"
-    t.bigint "user_id"
+    t.bigint "manager_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_djs_on_user_id"
+    t.index ["manager_id"], name: "index_djs_on_manager_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -57,6 +57,6 @@ ActiveRecord::Schema.define(version: 2020_05_09_051611) do
   end
 
   add_foreign_key "bookings", "djs"
-  add_foreign_key "bookings", "users"
-  add_foreign_key "djs", "users"
+  add_foreign_key "bookings", "users", column: "renter_id"
+  add_foreign_key "djs", "users", column: "manager_id"
 end
