@@ -8,11 +8,14 @@ class BookingController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
-    @booking = booking.new(booking_params)
-    @booking.user = @user
+    @dj = Dj.find(params[:renter_id])
+    @booking = Booking.new(booking_params)
+    @booking.user = current_user
+    authorize @booking
+    @booking.dj = @dj
+
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to booking_path(@booking.user)
     else
       render 'booking/show'
     end

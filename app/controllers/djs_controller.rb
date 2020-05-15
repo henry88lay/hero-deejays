@@ -1,16 +1,26 @@
 class DjsController < ApplicationController
+  #before_action :set_dj, except: [:index, :create]
+
   def index
-    @djs = Dj.all
+    @djs = current_user.djs
+    #@djs = Dj.all
   end
 
+  def new
+    @dj = current_user.Dj.new
+  end
+
+
   def show
-    @dj = Dj.find(params[:id])
+    set_dj
   end
 
   def create
-  @dj = Dj.new(dj_params)
-  @dj.manager_id = current_user
+    #@user = User.find(params[:id])
+    @dj = Dj.new(dj_params)
+    @dj.user = @current_user
     if @dj.save
+      puts "works successfully"
       redirect_to djs_path(@dj)
     else
       render 'new'
@@ -19,12 +29,12 @@ class DjsController < ApplicationController
     # redirect_to user_path
   end
 
-  def edit
+  def listings
     @dj = Dj.find(params[:id])
   end
 
-  def new
-    @dj = Dj.new
+  def edit
+    @dj = Dj.find(params[:id])
   end
 
   def update
