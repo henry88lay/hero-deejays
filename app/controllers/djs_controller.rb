@@ -7,6 +7,10 @@ class DjsController < ApplicationController
     @dj = Dj.find(params[:id])
   end
 
+  def new
+    @dj = Dj.new
+  end
+
   def create
   @dj = Dj.new(dj_params)
   @dj.manager_id = current_user
@@ -21,10 +25,6 @@ class DjsController < ApplicationController
 
   def edit
     @dj = Dj.find(params[:id])
-  end
-
-  def new
-    @dj = Dj.new
   end
 
   def update
