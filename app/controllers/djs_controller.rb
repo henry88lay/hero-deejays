@@ -11,7 +11,7 @@ class DjsController < ApplicationController
   @dj = Dj.new(dj_params)
   @dj.manager_id = current_user
     if @dj.save
-      redirect_to djs_path(@dj)
+      redirect_to dj_path(@dj)
     else
       render 'new'
     end
