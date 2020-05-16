@@ -13,7 +13,7 @@ class DjsController < ApplicationController
 
 
   def show
-
+    @dj = Dj.find(params[:id])
   end
 
   def new

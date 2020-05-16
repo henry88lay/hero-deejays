@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   end
 
   resources :bookings, only: [:edit, :destroy]
+end
   
 
