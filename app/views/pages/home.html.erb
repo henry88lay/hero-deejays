@@ -1,5 +1,7 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%= render 'shared/banner' %>
 
-<a href=""><%= link_to "show all", djs_path %></a>
-<a href=""><%= link_to "create a new dj", new_dj_path %></a>
+<div class="button-container">
+<%= link_to "show all", djs_path, class: "btn btn-ghost" %>
+<%= link_to "create a new dj", new_dj_path, class: "btn btn-ghost" %>
+</div>
+
