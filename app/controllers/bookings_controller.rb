@@ -1,16 +1,24 @@
-class BookingController < ApplicationController
+class BookingsController < ApplicationController
   def index
-    @booking = Booking.all
+    @bookings = Booking.all
+  end
+
+  def new
+    @dj = Dj.find(params[:dj_id])
+    @booking = Booking.new
   end
 
   def show
     @booking = Booking.find(params[:id])
   end
 
+
+
   def create
-    @user = User.find(params[:user_id])
-    @booking = booking.new(booking_params)
-    @booking.user = @user
+    @booking = Booking.new(booking_params)
+    @booking.renter_id = current_user.id
+    @booking.dj_id = params[:dj_id]
+    @booking.total_price = params[:dj_price]
     if @booking.save
       redirect_to booking_path(@booking)
     else
