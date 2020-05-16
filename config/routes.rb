@@ -3,9 +3,11 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   root to: 'pages#home'
-  resources :djs do
-    resources :booking, only: [:new, :create]
+
+  resources :djs do 
+    resources :bookings, only: [:new, :create]
   end
 
-  resources :booking, only: [:show, :edit]
-end
+  resources :bookings, only: [:edit, :destroy]
+  
+

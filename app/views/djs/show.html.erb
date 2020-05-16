@@ -7,4 +7,7 @@
 <p><%= @dj.address %></p>
 
 <%= link_to 'Take me back', djs_path %>
-<%= link_to 'Booking a DJ', new_booking_path %>
+
+<%= link_to 'Book a DJ', new_dj_booking_path(@dj) %>
+
+
