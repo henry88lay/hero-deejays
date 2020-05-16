@@ -1,1 +1,9 @@
-<h1>this shows one dj</h1>
+<h1><%= @dj.name %></h1>
+<p><%= @dj.description %></p>
+<p><%= @dj.dj_price %></p>
+<p><%= @dj.genre %></p>
+<p><%= @dj.email %></p>
+<p><%= @dj.address %></p>
+
+<%= link_to 'Take me back', djs_path %>
+<%= link_to 'Booking a DJ', new_booking_path %>
