@@ -16,6 +16,10 @@ class DjsController < ApplicationController
 
   end
 
+  def new
+    @dj = Dj.new
+  end
+
   def create
 
     @dj = Dj.new(dj_params)
@@ -23,7 +27,6 @@ class DjsController < ApplicationController
 
 
     if @dj.save
-      puts "works successfully"
       redirect_to djs_path(@dj)
     else
       render 'new'
@@ -38,7 +41,6 @@ class DjsController < ApplicationController
   def edit
     @dj = Dj.find(params[:id])
   end
-
 
   def update
     if @dj.update(dj_params)
