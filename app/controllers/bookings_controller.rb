@@ -12,19 +12,20 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 
-
-
   def create
 
     @booking = Booking.new(booking_params)
+    
     @booking.renter_id = current_user.id
     @booking.dj_id = params[:dj_id]
-    @booking.total_price = params[:dj_price]
-
+    @dj = Dj.find(params[:dj_id])
+    @booking.total_price = @dj.dj_price
+    @booking.status = "Pending"
+  
     if @booking.save
-      redirect_to booking_path(@booking.user)
+      redirect_to djs_path(@dj)
     else
-      render 'booking/show'
+      render 'bookings/new'
     end
   end
   
