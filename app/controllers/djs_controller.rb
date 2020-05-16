@@ -1,13 +1,21 @@
 class DjsController < ApplicationController
+  #before_action :set_dj, only: [:index, :create, :update]
+  before_action :authenticate_user!
+
   def index
-    @djs = Dj.all
+    @djs = policy_scope(Dj)
+  end
+
+  def new
+    @dj = current_user.djs.new
+    authorize @dj
   end
 
   def show
-    @dj = Dj.find(params[:id])
   end
 
   def create
+
     @dj = Dj.new(dj_params)
     @dj.manager_id = current_user.id
 
@@ -20,10 +28,6 @@ class DjsController < ApplicationController
 
   def edit
     @dj = Dj.find(params[:id])
-  end
-
-  def new
-    @dj = Dj.new
   end
 
   def update
@@ -40,9 +44,13 @@ class DjsController < ApplicationController
   #   redirect_to dj_path(@dj.user)
   # end 
 
+
   private
 
+
   def dj_params
+
       params.require(:dj).permit(:name, :email, :dj_price, :genre, :description, :address)
+
   end
 end
