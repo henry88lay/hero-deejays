@@ -1,0 +1,8 @@
+<div class="card" style="width: 100%;">
+  <div class="card-body">
+    <h5 class="card-title"> <%= dj.name %> </h5>
+    <p class="card-text"> <%= dj.description %> </p>
+    <a href="<%= new_dj_booking_path(dj) %>" class="btn btn-primary">Book</a>
+    <%= link_to 'Details', dj_path(dj) %>
+  </div>
+</div>

@@ -15,12 +15,14 @@ class BookingsController < ApplicationController
 
 
   def create
+
     @booking = Booking.new(booking_params)
     @booking.renter_id = current_user.id
     @booking.dj_id = params[:dj_id]
     @booking.total_price = params[:dj_price]
+
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to booking_path(@booking.user)
     else
       render 'booking/show'
     end
