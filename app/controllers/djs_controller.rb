@@ -1,9 +1,6 @@
 class DjsController < ApplicationController
 
-  #before_action :set_dj, except: [:index, :create]
-
   def index
-    #@djs = current_user.djs
     @djs = Dj.all
   end
 
@@ -44,11 +41,11 @@ class DjsController < ApplicationController
     end
   end
 
-  # def destroy
-  #   @dj = Dj.find(params[:id])
-  #   @dj.destroy
-  #   redirect_to dj_path(@dj.user)
-  # end 
+  def destroy
+     @dj = Dj.find(params[:id])
+     @dj.destroy
+     redirect_to djs_path(@dj)
+  end 
 
 
   private
