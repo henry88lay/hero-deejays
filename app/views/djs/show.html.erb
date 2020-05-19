@@ -8,6 +8,10 @@
 <br>
 
 <%= link_to 'Take me back', djs_path, class: "btn btn-ghost" %>
+<%= link_to "Delete My DJ",
+            dj_path(@dj),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
 
 <%= link_to 'Book a DJ', new_dj_booking_path(@dj), class: "btn btn-ghost"  %>
 

@@ -12,7 +12,6 @@ class DjsController < ApplicationController
     @dj = Dj.find(params[:id])
   end
 
-
   def create
     @dj = Dj.new(dj_params)
     @dj.manager_id = current_user.id
@@ -23,11 +22,6 @@ class DjsController < ApplicationController
       render 'new'
     end
   end
-
-  def listings
-    @dj = Dj.find(params[:id])
-  end
-
 
   def edit
     @dj = Dj.find(params[:id])
@@ -42,18 +36,17 @@ class DjsController < ApplicationController
   end
 
   def destroy
-     @dj = Dj.find(params[:id])
-     @dj.destroy
-     redirect_to djs_path(@dj)
-  end 
+    @dj = Dj.find(params[:id])
+    @dj.destroy
+    redirect_to djs_path
+  end
 
 
   private
 
 
   def dj_params
-
       params.require(:dj).permit(:name, :email, :dj_price, :genre, :description, :address)
-
   end
+
 end
