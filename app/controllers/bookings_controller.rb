@@ -17,15 +17,16 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     
     @booking.renter_id = current_user.id
-    @booking.dj_id = params[:dj_id]
-    @dj = Dj.find(params[:dj_id])
-    @booking.total_price = @dj.dj_price
+
+    dj = Dj.find(params[:dj_id])
+    @booking.dj = dj
+    @booking.total_price = dj.dj_price * (@booking.end_date-@booking.start_date)
     @booking.status = "Pending"
-  
+    
     if @booking.save
-      redirect_to djs_path(@dj)
+      redirect_to booking_path(@booking)
     else
-      render 'bookings/new'
+      render 'new'
     end
   end
   
