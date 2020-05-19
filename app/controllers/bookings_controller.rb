@@ -15,7 +15,9 @@ class BookingsController < ApplicationController
   def create
 
     @booking = Booking.new(booking_params)
+    
     @booking.renter_id = current_user.id
+
     dj = Dj.find(params[:dj_id])
     @booking.dj = dj
     @booking.total_price = dj.dj_price * (@booking.end_date-@booking.start_date)
