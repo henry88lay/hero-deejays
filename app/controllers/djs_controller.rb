@@ -1,9 +1,6 @@
 class DjsController < ApplicationController
 
-  #before_action :set_dj, except: [:index, :create]
-
   def index
-    #@djs = current_user.djs
     @djs = Dj.all
   end
 
@@ -15,7 +12,6 @@ class DjsController < ApplicationController
     @dj = Dj.find(params[:id])
   end
 
-
   def create
     @dj = Dj.new(dj_params)
     @dj.manager_id = current_user.id
@@ -26,11 +22,6 @@ class DjsController < ApplicationController
       render 'new'
     end
   end
-
-  def listings
-    @dj = Dj.find(params[:id])
-  end
-
 
   def edit
     @dj = Dj.find(params[:id])
@@ -44,19 +35,18 @@ class DjsController < ApplicationController
     end
   end
 
-  # def destroy
-  #   @dj = Dj.find(params[:id])
-  #   @dj.destroy
-  #   redirect_to dj_path(@dj.user)
-  # end 
+  def destroy
+    @dj = Dj.find(params[:id])
+    @dj.destroy
+    redirect_to djs_path
+  end
 
 
   private
 
 
   def dj_params
-
       params.require(:dj).permit(:name, :email, :dj_price, :genre, :description, :address)
-
   end
+
 end
