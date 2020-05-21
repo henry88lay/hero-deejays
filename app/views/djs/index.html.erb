@@ -8,7 +8,8 @@
     <img class="card-img-top" src="https://source.unsplash.com/400x200/?music" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title"><%= dj.name %></h5>
-      <%= link_to "View DJ", dj, class: "btn btn-primary" %>
+      <p class="card-description"><%= dj.description %></p>
+      <%= link_to "View DJ", dj, class: "btn card-btn-primary" %>
     </div>
   </div>
 <% end %>
