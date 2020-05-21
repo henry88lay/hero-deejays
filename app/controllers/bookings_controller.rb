@@ -1,7 +1,15 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = Booking.all
+    @bookings = Booking.where("renter_id = ?", current_user.id)
+    @dj_bookings = Booking.all.select {|booking| booking.dj.manager_id == current_user.id}
+
   end
+
+  def button
+    @booking = Booking.find(params[:id])
+    @booking.status = "Confirmed"
+  end
+
 
   def new
     @dj = Dj.find(params[:dj_id])

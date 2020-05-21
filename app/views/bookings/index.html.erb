@@ -1,0 +1,23 @@
+<h1>Showing My Bookings</h1>
+
+<% @bookings.each do |booking| %>
+<p><strong>Price:</strong><%= booking.total_price %></p>
+<p><strong>Start Date:</strong> <%= booking.start_date %></p>
+<p><strong>End Date:</strong> <%= booking.end_date %></p>
+<p><strong>Booking Status:</strong> <%= booking.status %></p>
+<hr/>
+<% end %>
+
+<h1>Showing My DJ Bookings</h1>
+
+<% @dj_bookings.each do |booking| %>
+  <p><strong>Price:</strong><%= booking.total_price %></p>
+  <p><strong>Start Date:</strong> <%= booking.start_date %></p>
+  <p><strong>End Date:</strong> <%= booking.end_date %></p>
+  <p><strong>Booking Status:</strong> <%= booking.status %></p>
+  <% if booking.status == "Pending"%>
+    <%= button_to 'Confirm Booking', button_path(booking), method: :get %>
+    <%= button_to 'Cancel Booking', button_path, method: :get %>
+  <% end %>
+<hr/>
+<% end %>
