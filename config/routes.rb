@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create]
   end
 
-  resources :bookings, only: [:edit, :destroy, :show]  
+  resources :bookings, only: [:edit, :destroy, :show, :index, :button]  
+  get '/button', to: 'bookings#button', as: 'button'
 end
 
