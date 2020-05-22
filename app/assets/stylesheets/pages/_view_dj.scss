@@ -1,0 +1,28 @@
+.dj-header {
+  color: white;
+}
+
+.dj-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 1px 1px;
+  grid-template-areas: "dj_form_grid dj_image_grid";
+}
+
+.dj-form-grid { 
+  grid-area: dj_form_grid;
+}
+
+.dj-container {
+    margin: 12px 34px;
+    color: white;
+  }
+  
+.dj-image-grid { 
+  grid-area: dj_image_grid;
+  margin: auto auto;
+  img {
+    width: 650px;
+  }
+}

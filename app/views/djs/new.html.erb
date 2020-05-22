@@ -1,10 +1,20 @@
-<h1>create a new dj</h1>
-<%= simple_form_for @dj do |f| %>
-  <%= f.input :name %>
-  <%= f.input :address %>
-  <%= f.input :dj_price %>
-  <%= f.input :genre %>
-  <%= f.input :description %>
-  <%= f.input :email %>
-  <%= f.submit %>
-<% end %>
+<h1 class="dj-header">Hi, Their! Let's get to know more about your Disco Jockey.</h1>
+
+<div class="dj-grid-container">
+  <div class="dj-grid-form">
+    <div class="dj-container">
+      <%= simple_form_for @dj do |f| %>
+        <%= f.input :name %>
+        <%= f.input :address %>
+        <%= f.input :dj_price %>
+        <%= f.input :genre %>
+        <%= f.input :description %>
+        <%= f.input :email %>
+        <%= f.submit class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+  <div class="dj-image-grid">
+    <%= image_tag  "https://www.burton.com/blogs/media/images/033116_DC_SteveAoki_8675.width-767.jpg" %>
+  </div>
+</div>
