@@ -17,6 +17,26 @@
 </div>
 
 
+<div class="cards">
+<% @djs.each do |dj| %>
+<%= link_to dj do %>
+ <div class="card content" data-aos="fade-up">
+    <div class="card-content">
+      <div class="card-img">
+        <%= cl_image_tag(dj.image.key) %>
+      </div>
+      <div class="card-label">
+        <%= dj.genre %>
+      </div>
+      <div class="card-title">
+        <%= dj.name %>
+      </div>
+    </div>
+  </div>
+<% end %>
+<% end %>
+
+
 
 
 
