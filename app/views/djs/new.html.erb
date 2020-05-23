@@ -1,3 +1,4 @@
+
 <h1 class="dj-header">Hi, Their! Let's get to know more about your Disco Jockey.</h1>
 
 <div class="dj-grid-container">
@@ -9,7 +10,9 @@
         <%= f.input :dj_price %>
         <%= f.input :genre %>
         <%= f.input :description %>
+        <%= f.input :image, as: :file %>
         <%= f.input :email %>
+
         <%= f.submit class: 'btn btn-primary' %>
       <% end %>
     </div>

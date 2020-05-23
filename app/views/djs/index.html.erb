@@ -1,14 +1,13 @@
 <h1>index djs</h1>
 
 <a href=""><%= link_to "create a new dj button", new_dj_path %></a>
-
 <div class="cards">
 <% @djs.each do |dj| %>
 <%= link_to dj do %>
  <div class="card content">
     <div class="card-content">
       <div class="card-img">
-        <img src="https://images.unsplash.com/photo-1547394765-185e1e68f34e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" alt="keyboard">
+        <%= cl_image_tag(dj.image.key) %>
       </div>
       <div class="card-label">
         <%= dj.genre %>
@@ -20,6 +19,5 @@
   </div>
 <% end %>
 <% end %>
-</div>
 
-  
+
