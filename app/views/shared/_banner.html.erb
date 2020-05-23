@@ -1,12 +1,37 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://wallpapercave.com/wp/wp1811488.jpg);">
   <div class="container">
     <div class="button-container">
-    <h1>Hero DeeJays brings</h1>
+    
+    <x-sign>
+      Hero DeeJays brings
+    </x-sign>
+
     <h3>Memories that take you back but Dreams take you forward</h3>
     <div class="animation-center">
     <%= render 'shared/music_bars' %>
     </div>
-      <%= link_to "Find My DJ", djs_path, class: "btn btn-primary" %>
+      <%= link_to "Find My DJ", djs_path, class: "btn btn-primary home-btn" %>
 </div>
   </div>
 </div>
+
+
+<script>
+  const signs = document.querySelectorAll('x-sign')
+  const randomIn = (min, max) => (
+    Math.floor(Math.random() * (max - min + 1) + min)
+  )
+
+  const mixupInterval = el => {
+    const ms = randomIn(2000, 4000)
+    el.style.setProperty('--interval', `${ms}ms`)
+  }
+
+  signs.forEach(el => {
+    mixupInterval(el)
+    el.addEventListener('webkitAnimationIteration', () => {
+      mixupInterval(el)
+    })
+  })
+  console.log("im in ")
+</script>
