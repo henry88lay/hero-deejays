@@ -1,5 +1,7 @@
 .dj-header {
   color: white;
+  text-transform: capitalize;
+  margin-top: 16px;
 }
 
 .dj-grid-container {
@@ -17,6 +19,14 @@
 .dj-container {
     margin: 12px 34px;
     color: white;
+  }
+
+  .dj-list-container {
+    margin: 12px 34px;
+    color: white;
+    list-style: none;
+    padding-left: 0px;
+    margin-left: 0px;
   }
   
 .dj-image-grid { 

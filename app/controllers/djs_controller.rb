@@ -1,7 +1,18 @@
 class DjsController < ApplicationController
 
   def index
+    @djs = Dj.geocoded
+    @markers = @djs.map do |dj|
+      {
+        lat: dj.latitude,
+        lng: dj.longitude,
+        #infoWindow: render_to_string(partial: "info_window", locals: { dj: dj }),
+        #image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
+      }
+    end
+
     @djs = Dj.all
+
   end
 
   def new
@@ -46,7 +57,7 @@ class DjsController < ApplicationController
 
 
   def dj_params
-      params.require(:dj).permit(:name, :email, :dj_price, :genre, :description, :address)
+      params.require(:dj).permit(:name, :email, :dj_price, :genre, :description, :address, :image)
   end
 
 end
