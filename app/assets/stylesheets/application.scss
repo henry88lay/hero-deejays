@@ -23,4 +23,31 @@ body {
   font-family: 'Work Sans', sans-serif;
   background: #252833;
   margin-bottom: 100px;
+  margin-top: 13vh;
+}
+
+h1 {
+  color: white;
+}
+
+.grid-container2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 1px 1px;
+  grid-template-areas: "left right";
+}
+
+.left { grid-area: left; }
+
+.right { grid-area: right; }
+
+#map {
+  position: fixed;
+  right: 5%;
+  top: 13vh;
+}
+
+.form-control {
+  width: 30vw;
 }
