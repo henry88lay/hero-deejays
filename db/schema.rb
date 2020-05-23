@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 2020_05_23_011444) do
-
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,12 +59,9 @@ ActiveRecord::Schema.define(version: 2020_05_23_011444) do
     t.bigint "manager_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-
     t.float "latitude"
     t.float "longitude"
-
     t.string "image"
-
     t.index ["manager_id"], name: "index_djs_on_manager_id"
   end
 
