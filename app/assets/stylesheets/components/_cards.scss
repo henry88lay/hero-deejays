@@ -35,12 +35,12 @@
 .cards {
   width: calc(100% - 2em);
   display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     grid-gap: 1em;
     // grid-template-areas:
     //   "a a b c";
-    width: 80%;
+    width: 50%;
 }
 
 .card {
