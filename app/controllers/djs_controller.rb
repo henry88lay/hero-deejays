@@ -3,9 +3,18 @@ class DjsController < ApplicationController
   def index
     if params[:query].present?
       sql_query = "name ILIKE :query OR genre ILIKE :query"
-      @djs = Dj.where(sql_query, query: "%#{params[:query]}%")
+      @djs = Dj.geocoded.where(sql_query, query: "%#{params[:query]}%")
     else
-      @djs = Dj.all
+      @djs = Dj.geocoded
+    end
+
+    @markers = @djs.map do |dj|
+      {
+        lat: dj.latitude,
+        lng: dj.longitude,
+        #infoWindow: render_to_string(partial: "info_window", locals: { dj: dj }),
+        #image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
+      }
     end
   end
 
