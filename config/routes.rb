@@ -4,11 +4,12 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
-  resources :djs do 
+  resources :djs do
     resources :bookings, only: [:new, :create]
   end
 
-  resources :bookings, only: [:edit, :destroy, :show, :index, :button]  
+  resources :bookings, only: [:edit, :destroy, :show, :index, :button]
   get '/button', to: 'bookings#button', as: 'button'
+
 end
 
