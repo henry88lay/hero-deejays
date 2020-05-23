@@ -1,8 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
+
 
 Dj.create!(name: "Tiesto", address: "68 Grattan St, Carlton", dj_price: 600, genre: "Electronic Dance", description: "Tijs Michiel Verwest OON, better known by his stage name Tiësto, is a Dutch DJ and record producer from Breda. He was named the Greatest DJ of All Time by Mix magazine in a poll voted by the fans. In 2013, he was voted by DJ Mag readers as the best DJ of the last 20 years", email: "tiesto@gmail.com", manager_id: 1)
 Dj.create!(name: "Steve Aoki", address: "110 Lygon St, Carlton", dj_price: 550, genre: "Electronic Dance", description: "Steven Hiroyuki Aoki is an American entertainer, DJ, record producer and music executive. In 2012, Pollstar designated Aoki as the highest grossing dance artist in North America from tours", email: "steveaoki@gmail.com", manager_id: 1)
