@@ -57,7 +57,7 @@ class DjsController < ApplicationController
 
 
   def dj_params
-      params.require(:dj).permit(:name, :email, :dj_price, :genre, :description, :address)
+      params.require(:dj).permit(:name, :email, :dj_price, :genre, :description, :address, :image)
   end
 
 end
