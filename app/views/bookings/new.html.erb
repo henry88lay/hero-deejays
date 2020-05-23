@@ -1,5 +1,12 @@
+<h1 class="dj-header">Book <%= @dj.name %></h1>
 
-<h1>Create a new booking</h1>
+<div class="d-flex">
+  <div class="w-50 booking-color">
+    <%= render 'form' %>
+  </div>
+  <div class="w-50 show-img">
+    <%= image_tag "https://weraveyou.com/wp-content/uploads/2018/04/Hardwell.jpg" %>
+  </div>
+</div>
 
-<%= render 'form' %>
 
