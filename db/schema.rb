@@ -59,9 +59,9 @@ ActiveRecord::Schema.define(version: 2020_05_23_011444) do
     t.bigint "manager_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "image"
     t.float "latitude"
     t.float "longitude"
-    t.string "image"
     t.index ["manager_id"], name: "index_djs_on_manager_id"
   end
 
