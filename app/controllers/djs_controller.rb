@@ -1,8 +1,14 @@
 class DjsController < ApplicationController
 
   def index
-    @djs = Dj.all
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR genre ILIKE :query"
+      @djs = Dj.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @djs = Dj.all
+    end
   end
+
 
   def new
     @dj = Dj.new

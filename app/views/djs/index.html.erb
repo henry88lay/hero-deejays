@@ -1,6 +1,16 @@
 <h1>index djs</h1>
 
 <a href=""><%= link_to "create a new dj button", new_dj_path %></a>
+
+<%= form_tag djs_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a Dj"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
 <div class="cards">
 <% @djs.each do |dj| %>
 <%= link_to dj do %>
@@ -19,3 +29,7 @@
   </div>
 <% end %>
 <% end %>
+
+
+
+
