@@ -1,16 +1,41 @@
-<h1><%= @dj.name %></h1>
-<br>
-<p><strong>About me:</strong><%= @dj.description %></p>
-<p><strong>Price:</strong> <%= @dj.dj_price %></p>
-<p><strong>Genre:</strong> <%= @dj.genre %></p>
-<p><strong>Email:</strong> <%= @dj.email %></p>
-<p><strong>Address:</strong> <%= @dj.address %></p>\
+<h2 class="dj-header">Hi! I'm <%= @dj.name %></h2>
+
+<div class="dj-grid-container">
+  <div class="dj-form-grid">
+    <ul class="dj-list-container">
+      <li>
+        <h4>About me:</h4>
+        <p><%= @dj.description %></p>
+      </li>
+      <li>
+        <h4>Price:</h4>
+        <p><%= @dj.dj_price %></p>
+      </li>
+        <li><h4>Genre:</h4>
+        <p><%= @dj.genre %></p>
+      </li>
+      <li>
+        <h4>Email:</h4>
+        <p><%= @dj.email %></p>
+      </li>
+        <li><h4>Address:</h4>
+        <p><%= @dj.address %></p>
+      </li>
+    </ul>
+  </div>
+
+  <div class="dj-image-grid">
+    <%= @dj.image %>
+  </div>
+</div>
+
 <br>
 <%= link_to 'Take me back', djs_path, class: "btn btn-ghost" %>
 <%= link_to "Delete My DJ",
             dj_path(@dj),
             method: :delete,
-            data: { confirm: "Are you sure?" } %>
+            data: { confirm: "Are you sure?" },
+            class: "btn btn-ghost" %>
 
 <%= link_to 'Book a DJ', new_dj_booking_path(@dj), class: "btn btn-ghost"  %>
 
