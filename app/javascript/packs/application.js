@@ -4,6 +4,7 @@
 // that code so it'll be compiled.
 import 'bootstrap';
 
+// testing comment
 import AOS from 'aos';
 AOS.init();
 
