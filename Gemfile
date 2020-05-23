@@ -24,6 +24,8 @@ gem 'devise'
 gem 'devise_token_auth'
 gem 'pundit'
 gem 'geocoder'
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'cloudinary', '~> 1.12.0'
 
 
 # Use Redis adapter to run Action Cable in production
