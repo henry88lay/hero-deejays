@@ -3,13 +3,15 @@
 <a href=""><%= link_to "create a new dj button", new_dj_path %></a>
 
 <div class="grid-container">
-    <% @djs.each do |dj| %>
-  <div class="card" id="card-align" style="width: 18rem;">
-    <img class="card-img-top" src="https://source.unsplash.com/400x200/?music" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title"><%= dj.name %></h5>
-      <%= link_to "View DJ", dj, class: "btn btn-primary" %>
+  <% @djs.each do |dj| %>
+    <div class="card" id="card-align" style="width: 18rem;">
+
+        <%= cl_image_tag(dj.image.key) %>
+
+      <div class="card-body">
+        <h5 class="card-title"><%= dj.name %></h5>
+        <%= link_to "View DJ", dj, class: "btn btn-primary" %>
+      </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
 </div>
